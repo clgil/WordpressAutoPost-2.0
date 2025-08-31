@@ -1,0 +1,18 @@
+{
+  "default": {
+    "schematic": 123,
+    "boardview": 456
+  },
+  "hp": {
+    "schematic": 789,
+    "boardview": 790
+  },
+  "dell": {
+    "schematic": 791,
+    "boardview": 792
+  },
+  "asus": {
+    "schematic": 793,
+    "boardview": 794
+  }
+}
