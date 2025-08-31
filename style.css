@@ -1,0 +1,37 @@
+/* wp:html */
+<style>
+    :root {
+        --primary-color: #27ae60;
+        --secondary-color: #34495e;
+        --background-light: #f4f7f6;
+        --border-color: #e9ecef;
+    }
+
+    .schematic-header h2 {
+        text-align: center;
+        color: var(--secondary-color);
+        font-size: 2.5em;
+        margin-bottom: 5px;
+    }
+
+    .download-button .wp-block-button__link {
+        background-color: var(--primary-color);
+        /* ... estilos similares, con variables ... */
+    }
+    .file-info-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    .info-card {
+        flex: 1 1 200px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+</style>
+/* /wp:html */

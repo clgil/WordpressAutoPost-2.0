@@ -1,0 +1,61 @@
+<!-- Título principal -->
+<h1 style="text-align:center; color:#2c3e50; margin-bottom:20px;">
+    {{ file_name }} Schematic Download
+</h1>
+
+<!-- Tabla de información del archivo -->
+<table style="margin:0 auto 30px auto; border-collapse:collapse; width:100%; max-width:600px; background:#f8f8f8; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+    <tr>
+        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">File Name</td>
+        <td style="padding:10px 16px;">{{ file_name }}</td>
+    </tr>
+    <tr>
+        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">File Size</td>
+        <td style="padding:10px 16px;">{{ file_size }}</td>
+    </tr>
+    <tr>
+        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">File Type</td>
+        <td style="padding:10px 16px;">{{ mime_type }}</td>
+    </tr>
+    <tr>
+        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">Download Server</td>
+        <td style="padding:10px 16px;">Google Drive</td>
+    </tr>
+</table>
+
+<!-- Botón de descarga grande -->
+<div style="text-align:center; margin-bottom:30px;">
+    <a href="{{ download_link }}" target="_blank" rel="noopener noreferrer"
+       style="display:inline-block; background:#27ae60; color:#fff; font-size:22px; font-weight:bold; padding:18px 48px; border-radius:8px; text-decoration:none; box-shadow:0 2px 8px rgba(39,174,96,0.25); transition:background 0.2s;">
+        <span style="vertical-align:middle;">&#128229;</span> Download Schematic
+    </a>
+</div>
+
+<!-- Advertencia de uso -->
+<div style="background:#fff3cd; color:#856404; border:1px solid #ffeeba; border-radius:6px; padding:18px 24px; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
+    <strong>Note:</strong> This schematic is provided for educational and repair purposes only. Always use these resources responsibly.
+</div>
+
+<!-- Sección de ayuda -->
+<div style="background:#eaf6fb; color:#2980b9; border:1px solid #b8e0f7; border-radius:6px; padding:16px 22px; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
+    <strong>Need Help?</strong> If the download link does not work or you need a different schematic, please <a href="https://schematic.movisoftvc.com/contact/" style="color:#2980b9; text-decoration:underline;">contact us</a>.
+</div>
+
+<!-- Descripción y ventajas -->
+<h2 style="color:#2c3e50; margin-bottom:12px;">About this Schematic</h2>
+<p style="font-size:16px; color:#34495e; line-height:1.7;">
+    The <strong>{{ file_name }}</strong> schematic is a vital resource for technicians, engineers, and enthusiasts working on this device. It includes detailed circuit diagrams and board layouts, making repairs and diagnostics much easier.
+</p>
+<ul style="color:#34495e; font-size:16px; margin-bottom:24px;">
+    <li>High-quality PDF format</li>
+    <li>Direct download from Google Drive</li>
+    <li>Free access – no registration required</li>
+    <li>Trusted by the repair community</li>
+</ul>
+
+<!-- Pie de página -->
+<hr style="border-top:1px solid #e1e1e1; margin:40px 0;">
+<p style="font-size:14px; color:#7f8c8d; text-align:center;">
+    &copy; {{ current_year }} Schematic Downloads by MovisoftVC. All rights reserved.
+</p>
+

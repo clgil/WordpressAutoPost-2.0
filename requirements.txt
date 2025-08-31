@@ -1,0 +1,15 @@
+# Core
+requests>=2.31.0
+python-dotenv>=1.0.1
+Jinja2>=3.1.4
+
+# Google Drive API
+google-api-python-client>=2.140.0
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.1
+google-auth-httplib2>=0.2.0
+
+# SQLite (incluido en Python, no requiere instalación)
+
+# Tkinter (incluido en la mayoría de distribuciones de Python)
+# En Ubuntu/Debian puede ser necesario: sudo apt-get install python3-tk
