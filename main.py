@@ -65,6 +65,10 @@ class Config:
     DATABASE_PATH: str = os.getenv("DATABASE_PATH", "wordpres_autopost.sqlite3")
     BRAND_IMAGES_JSON: str = os.getenv("BRAND_IMAGES_JSON", "brand_images.json")
 
+    # Default images
+    DEFAULT_SCHEMATIC_IMAGE_URL: str = os.getenv("DEFAULT_SCHEMATIC_IMAGE_URL", "wp-content/uploads/2024/11/default-Schematic-post.jpeg")
+    DEFAULT_BOARDVIEW_IMAGE_URL: str = os.getenv("DEFAULT_BOARDVIEW_IMAGE_URL", "wp-content/uploads/2024/11/2368408.jpg")
+
 # Construir campos derivados
 if Config.WP_SITE_URL:
     Config.WP_API_BASE = f"{Config.WP_SITE_URL}/wp-json/wp/v2"

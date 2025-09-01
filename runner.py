@@ -10,6 +10,7 @@ from main import Config
 from database import init_db, track_new_file, mark_as_published, is_file_processed, get_pending_posts
 from google_drive import list_files_in_drive
 from openrouter_api import get_brief_description
+from google_drive import get_file_metadata
 from exe_io_api import shorten_url
 from image_processor import set_featured_image_from_url
 from wordpress_api import create_post
@@ -73,20 +74,24 @@ def process_file(file_id: str, file_name: str, template: Template, scheduled_dat
     # Descripción
     description = get_brief_description(file_name)
 
+    # Metadata del archivo
+    file_metadata = get_file_metadata(file_id)
+
     # Determinar tipo de archivo
     is_boardview = "boardview" in file_name.lower()
     download_label = "Download Boardview" if is_boardview else "Download Schematic"
 
     # Imagen destacada
     if is_boardview:
-        image_url = f"{Config.WP_SITE_URL}/wp-content/uploads/boardview-default.jpg"
+        image_url = f"{Config.WP_SITE_URL}/{Config.DEFAULT_BOARDVIEW_IMAGE_URL}"
     else:
-        image_url = f"{Config.WP_SITE_URL}/wp-content/uploads/schematic-default.jpg"
+        image_url = f"{Config.WP_SITE_URL}/{Config.DEFAULT_SCHEMATIC_IMAGE_URL}"
     featured_image_id = set_featured_image_from_url(image_url, alt_text=file_name)
 
     # Renderizar template
     content = template.render(
         file_name=file_name,
+        file_metadata=file_metadata,
         download_link=short_link,
         brief_description=description,
         download_label=download_label,

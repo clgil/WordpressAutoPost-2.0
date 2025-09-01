@@ -1,61 +1,193 @@
-<!-- Título principal -->
-<h1 style="text-align:center; color:#2c3e50; margin-bottom:20px;">
-    {{ file_name }} Schematic Download
-</h1>
+<!-- wp:more -->
+<!--more-->
+<!-- /wp:more -->
 
-<!-- Tabla de información del archivo -->
-<table style="margin:0 auto 30px auto; border-collapse:collapse; width:100%; max-width:600px; background:#f8f8f8; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-    <tr>
-        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">File Name</td>
-        <td style="padding:10px 16px;">{{ file_name }}</td>
-    </tr>
-    <tr>
-        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">File Size</td>
-        <td style="padding:10px 16px;">{{ file_size }}</td>
-    </tr>
-    <tr>
-        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">File Type</td>
-        <td style="padding:10px 16px;">{{ mime_type }}</td>
-    </tr>
-    <tr>
-        <td style="padding:10px 16px; font-weight:bold; color:#34495e;">Download Server</td>
-        <td style="padding:10px 16px;">Google Drive</td>
-    </tr>
-</table>
+<!-- wp:paragraph -->
+<p><strong>{{ file_name }}</strong> files free download</p>
+<!-- /wp:paragraph -->
 
-<!-- Botón de descarga grande -->
-<div style="text-align:center; margin-bottom:30px;">
-    <a href="{{ download_link }}" target="_blank" rel="noopener noreferrer"
-       style="display:inline-block; background:#27ae60; color:#fff; font-size:22px; font-weight:bold; padding:18px 48px; border-radius:8px; text-decoration:none; box-shadow:0 2px 8px rgba(39,174,96,0.25); transition:background 0.2s;">
-        <span style="vertical-align:middle;">&#128229;</span> Download Schematic
-    </a>
+<!-- wp:paragraph -->
+<p><strong>Descripción:</strong> {{ brief_description }}</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:table -->
+<figure class="wp-block-table">
+    <table class="file-info">
+        <tbody>
+            <tr>
+                <th>File Name</th>
+                <td>{{ file_name }}</td>
+            </tr>
+            <tr>
+                <th>File Size</th>
+                <td>{{ file_size }}</td>
+            </tr>
+            <tr>
+                <th>File Type</th>
+                <td>{{ mime_type }}</td>
+            </tr>
+            <tr>
+                <th>Download Server</th>
+                <td>Google Drive</td>
+            </tr>
+        </tbody>
+    </table>
+</figure>
+<!-- /wp:table -->
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+<div class="wp-block-buttons">
+    <!-- wp:button {"className":"download-button"} -->
+    <div class="wp-block-button download-button">
+        <a class="wp-block-button__link" href="{{ download_link }}" target="_blank">&#128229; Download Schematic</a>
+    </div>
+    <!-- /wp:button -->
 </div>
+<!-- /wp:buttons -->
 
-<!-- Advertencia de uso -->
-<div style="background:#fff3cd; color:#856404; border:1px solid #ffeeba; border-radius:6px; padding:18px 24px; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
-    <strong>Note:</strong> This schematic is provided for educational and repair purposes only. Always use these resources responsibly.
+<!-- wp:html -->
+<div class="ads-section">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'aa66397b59f92ae2ab4c2430dd928887',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//leavingaileen.com/aa66397b59f92ae2ab4c2430dd928887/invoke.js"></script>
 </div>
+<!-- /wp:html -->
 
-<!-- Sección de ayuda -->
-<div style="background:#eaf6fb; color:#2980b9; border:1px solid #b8e0f7; border-radius:6px; padding:16px 22px; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">
-    <strong>Need Help?</strong> If the download link does not work or you need a different schematic, please <a href="https://schematic.movisoftvc.com/contact/" style="color:#2980b9; text-decoration:underline;">contact us</a>.
+<!-- wp:group {"className":"note-box"} -->
+<div class="wp-block-group note-box">
+    <!-- wp:paragraph -->
+    <p><strong>Note:</strong> This schematic is provided for educational and repair purposes only. Always use these resources responsibly.</p>
+    <!-- /wp:paragraph -->
 </div>
+<!-- /wp:group -->
 
-<!-- Descripción y ventajas -->
-<h2 style="color:#2c3e50; margin-bottom:12px;">About this Schematic</h2>
-<p style="font-size:16px; color:#34495e; line-height:1.7;">
-    The <strong>{{ file_name }}</strong> schematic is a vital resource for technicians, engineers, and enthusiasts working on this device. It includes detailed circuit diagrams and board layouts, making repairs and diagnostics much easier.
-</p>
-<ul style="color:#34495e; font-size:16px; margin-bottom:24px;">
+<!-- wp:group {"className":"help-box"} -->
+<div class="wp-block-group help-box">
+    <!-- wp:paragraph -->
+    <p><strong>Need Help?</strong> If the download link does not work or you need a different schematic, please <a href="https://schematic.movisoftvc.com/contact/">contact us</a>.</p>
+    <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":2} -->
+<h2>About this Schematic</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>The <strong>{{ file_name }}</strong> is a vital resource for technicians, engineers, and enthusiasts working on this device. It includes detailed circuit diagrams and board layouts, making repairs and diagnostics much easier.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Open the .CAD file with <a href="https://schematic.movisoftvc.com/openboardview-software/">OpenBoardView</a> or <a href="https://schematic.movisoftvc.com/altium-365-pcb-design-with-cloud-based-collaboration/">Altium 365</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Open the PDF file with <a href="https://get.adobe.com/uk/reader/">Acrobat Reader</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>Legal Disclaimer</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Manufacturer does not publicly release schematics or boardview files. These resources are shared to aid <strong>responsible repair efforts</strong>. Always comply with local laws and avoid unauthorized distribution. The information provided here is based on available specifications and features at the time of writing. Always check the official product documentation for the most up-to-date details. <strong>Use these schematics at your own risk.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Struggling with a stubborn repair? Share your story below! <br><strong>#PCBRepair #TechCommunity</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul>
     <li>High-quality PDF format</li>
     <li>Direct download from Google Drive</li>
-    <li>Free access – no registration required</li>
+    <li>Free access - no registration required</li>
     <li>Trusted by the repair community</li>
 </ul>
+<!-- /wp:list -->
 
-<!-- Pie de página -->
-<hr style="border-top:1px solid #e1e1e1; margin:40px 0;">
-<p style="font-size:14px; color:#7f8c8d; text-align:center;">
-    &copy; {{ current_year }} Schematic Downloads by MovisoftVC. All rights reserved.
-</p>
+<!-- wp:html -->
+<style>
+    .schematic-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
 
+    .file-info table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .file-info th, .file-info td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .file-info th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        color: #34495e;
+        width: 30%;
+    }
+
+    .download-button .wp-block-button__link {
+        display: inline-block;
+        background-color: #27ae60;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 15px 40px;
+        border-radius: 6px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .download-button .wp-block-button__link:hover {
+        background-color: #219653;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .note-box {
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin-bottom: 25px;
+        background-color: #fff3cd;
+        border-left: 4px solid #ffc107;
+        color: #856404;
+    }
+
+    .help-box {
+        padding: 15px 20px;
+        border-radius: 6px;
+        margin-bottom: 25px;
+        background-color: #e8f4fd;
+        border-left: 4px solid #3498db;
+        color: #2c3e50;
+    }
+
+    .help-box a {
+        color: #2980b9;
+        text-decoration: underline;
+    }
+
+    .wp-block-list li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+</style>
+<!-- /wp:html -->
