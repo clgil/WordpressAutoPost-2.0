@@ -12,56 +12,34 @@ from main import Config
 logger = logging.getLogger("openrouter_api")
 
 
-def get_brief_description(file_name: str) -> str:
-    """
-    Llama a OpenRouter API para generar una breve descripción del archivo.
-    Devuelve una cadena (puede ser vacía si falla).
-    """
-    api_key = Config.OPENROUTER_API_KEY
-    if not api_key:
-        logger.warning("OPENROUTER_API_KEY no configurado. Se omite descripción.")
-        return ""
-
+def get_brief_description(file_name):
+    prompt = (
+        f"Eres un experto en hardware y electrónica. A partir del nombre de un archivo de diagrama esquemático "
+        f"'{file_name}' de una placa madre, laptop o tarjeta gráfica, genera una descripción, precisa y clara "
+        "del equipo al que pertenece. Incluye:\n"
+        "- Tipo de dispositivo (PC, laptop, GPU)\n"
+        "- Marca\n"
+        "- Modelo\n"
+        "- Una característica destacada si aplica\n\n"
+        "La descripción debe ser entendible para alguien que busque información rápida sobre hardware, "
+        "y debe ocupar una sola frase o formato de ficha muy breve. No agregues información irrelevante."
+    )
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
-        "Authorization": f"Bearer {api_key}",
-        "HTTP-Referer": "https://your-app.example",  # opcional, se puede personalizar
-        "X-Title": "WordpressAutoPost",
+        "Authorization": f"Bearer {Config.OPENROUTER_API_KEY}",
+        "Content-Type": "application/json"
     }
-
     data = {
-        "model": "gpt-3.5-turbo",  # o cualquier modelo compatible
+        "model": "openai/gpt-3.5-turbo",  # Puedes cambiar el modelo si tienes acceso a otro
         "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "Eres un asistente que redacta descripciones breves, claras y atractivas "
-                    "para archivos técnicos de esquemas electrónicos y boardviews. "
-                    "No uses más de 25 palabras."
-                ),
-            },
-            {
-                "role": "user",
-                "content": f"Escribe una breve descripción para el archivo: {file_name}",
-            },
-        ],
-        "max_tokens": 60,
-        "temperature": 0.6,
+            {"role": "user", "content": prompt}
+        ]
     }
-
     try:
-        resp = requests.post(url, headers=headers, json=data, timeout=Config.HTTP_TIMEOUT_SECONDS)
-        if resp.status_code != 200:
-            logger.error("Error de OpenRouter (%s): %s", resp.status_code, resp.text[:200])
-            return ""
-
-        payload = resp.json()
-        choice = payload.get("choices", [{}])[0]
-        message = choice.get("message", {})
-        content = message.get("content", "")
-        description = content.strip() if content else ""
-        logger.debug("Descripción generada para %s: %s", file_name, description)
-        return description
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        result = response.json()
+        return result["choices"][0]["message"]["content"].strip()
     except Exception as e:
-        logger.exception("Excepción al llamar a OpenRouter para %s: %s", file_name, e)
+        print(f"Error consultando OpenRouter.ai: {e}")
         return ""

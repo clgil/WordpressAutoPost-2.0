@@ -1,18 +1,50 @@
 {
   "default": {
-    "schematic": 123,
-    "boardview": 456
+    "schematic": 4150,
+    "boardview": 4151
   },
-  "hp": {
-    "schematic": 789,
-    "boardview": 790
+  "amd": {
+    "schematic": 4547,
+    "boardview": 4546
+  },
+  "toshiba": {
+    "schematic": 4567,
+    "boardview": 4566
+  },
+  "sony": {
+    "schematic": 4565,
+    "boardview": 4564
+  },
+  "msi": {
+    "schematic": 4563,
+    "boardview": 4562
+  },
+  "lg": {
+    "schematic": 4561,
+    "boardview": 4560
+  },
+  "lenovo": {
+    "schematic": 4559,
+    "boardview": 4558
+  },
+  "gigabyte": {
+    "schematic": 4557,
+    "boardview": 4556
+  },
+  "foxconn": {
+    "schematic": 4555,
+    "boardview": 4554
   },
   "dell": {
-    "schematic": 791,
-    "boardview": 792
+    "schematic": 4553,
+    "boardview": 4552
   },
   "asus": {
-    "schematic": 793,
-    "boardview": 794
+    "schematic": 4551,
+    "boardview": 4550
+  },
+  "asrock": {
+    "schematic": 4549,
+    "boardview": 4548
   }
 }
